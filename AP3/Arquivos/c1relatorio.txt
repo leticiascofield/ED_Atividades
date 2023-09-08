@@ -1,0 +1,56 @@
+﻿Estruturas de Dados
+Aula Prática 3
+c1
+
+
+
+Nome: Letícia Scofield Lenzoni
+Matrícula: 2022035547
+
+
+
+
+1. Provavelmente o erro está no acesso de memória inválido, pois na iteração de i, ele chega a valer 10, porém não existe a posição a[10] no vetor.
+
+
+2.  Valgrid:
+==20003== Memcheck, a memory error detector
+==20003== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20003== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==20003== Command: ./c1.exe
+==20003== 
+==20003== Invalid write of size 4
+==20003==    at 0x1091D8: main (c1.c:9)
+==20003==  Address 0x4a8b068 is 0 bytes after a block of size 40 alloc'd
+==20003==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==20003==    by 0x1091A5: main (c1.c:6)
+==20003== 
+012345678910==20003== 
+==20003== HEAP SUMMARY:
+==20003==     in use at exit: 0 bytes in 0 blocks
+==20003==   total heap usage: 2 allocs, 2 frees, 1,064 bytes allocated
+==20003== 
+==20003== All heap blocks were freed -- no leaks are possible
+==20003== 
+==20003== For lists of detected and suppressed errors, rerun with: -s
+==20003== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+
+3.  Na condição do for mudar “i < 11” para “i < 10”
+
+
+4. Valgrid:
+==20733== Memcheck, a memory error detector
+==20733== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20733== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==20733== Command: ./c1.exe
+==20733== 
+==20733== 
+==20733== HEAP SUMMARY:
+==20733==     in use at exit: 0 bytes in 0 blocks
+==20733==   total heap usage: 1 allocs, 1 frees, 40 bytes allocated
+==20733== 
+==20733== All heap blocks were freed -- no leaks are possible
+==20733== 
+==20733== For lists of detected and suppressed errors, rerun with: -s
+==20733== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

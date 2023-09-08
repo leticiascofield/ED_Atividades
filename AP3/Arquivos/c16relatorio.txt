@@ -1,0 +1,31 @@
+﻿Estruturas de Dados
+Aula Prática 3
+c16
+
+
+
+Nome: Letícia Scofield Lenzoni
+Matrícula: 2022035547
+
+
+
+1. Possivelmente o erro está na divisão por zero, porque ocorre a/b, onde b=0.
+
+
+2. GDB:
+Starting program: /home/lets/ED_Atividades/AP3/CodigosReparados/c16.exe 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Program received signal SIGFPE, Arithmetic exception.
+0x000055555555513b in actual_calc (a=13, b=0) at c16.c:6
+6         c=a/b;
+
+
+3. Alterei o b=0 para b=1.
+
+4. GDB:
+Starting program: /home/lets/ED_Atividades/AP3/CodigosReparados/c16.exe 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 44597) exited normally]

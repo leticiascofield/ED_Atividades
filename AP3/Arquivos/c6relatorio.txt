@@ -1,0 +1,64 @@
+﻿Estruturas de Dados
+Aula Prática 3
+c6
+
+
+
+Nome: Letícia Scofield Lenzoni
+Matrícula: 2022035547
+
+
+
+1. Provavelmente o erro está relacinado à desalocação de memória não estar sendo feito adequadamente, sendo necessário fazê-la dentro do resizeArray.
+
+
+2. Valgrind:
+==31218== Memcheck, a memory error detector
+==31218== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==31218== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==31218== Command: ./c6.exe
+==31218== 
+==31218== Invalid free() / delete / delete[] / realloc()
+==31218==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31218==    by 0x109215: main (c6.c:21)
+==31218==  Address 0x4a8b090 is 0 bytes inside a block of size 40 free'd
+==31218==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31218==    by 0x1091B4: resizeArray (c6.c:12)
+==31218==    by 0x109202: main (c6.c:19)
+==31218==  Block was alloc'd at
+==31218==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31218==    by 0x1091EC: main (c6.c:18)
+==31218== 
+==31218== 
+==31218== HEAP SUMMARY:
+==31218==     in use at exit: 60 bytes in 1 blocks
+==31218==   total heap usage: 3 allocs, 3 frees, 116 bytes allocated
+==31218== 
+==31218== LEAK SUMMARY:
+==31218==    definitely lost: 60 bytes in 1 blocks
+==31218==    indirectly lost: 0 bytes in 0 blocks
+==31218==      possibly lost: 0 bytes in 0 blocks
+==31218==    still reachable: 0 bytes in 0 blocks
+==31218==         suppressed: 0 bytes in 0 blocks
+==31218== Rerun with --leak-check=full to see details of leaked memory
+==31218== 
+==31218== For lists of detected and suppressed errors, rerun with: -s
+==31218== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+3. Adicionei "free(dPtr)" no fim de resizeArray e retirei o free(array->data) do fim do código.
+
+4. Valgrind:
+==32153== Memcheck, a memory error detector
+==32153== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==32153== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==32153== Command: ./c6.exe
+==32153== 
+==32153== 
+==32153== HEAP SUMMARY:
+==32153==     in use at exit: 0 bytes in 0 blocks
+==32153==   total heap usage: 3 allocs, 3 frees, 116 bytes allocated
+==32153== 
+==32153== All heap blocks were freed -- no leaks are possible
+==32153== 
+==32153== For lists of detected and suppressed errors, rerun with: -s
+==32153== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

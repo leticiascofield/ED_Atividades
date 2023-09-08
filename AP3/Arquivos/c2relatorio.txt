@@ -1,0 +1,79 @@
+﻿Estruturas de Dados
+Aula Prática 3
+c2
+
+
+
+Nome: Letícia Scofield Lenzoni
+Matrícula: 2022035547
+
+
+
+
+1. Provavelmente o erro está na impressão de uma posição nula, pois o a[9] não está recebendo um valor no primeiro loop, porém está sendo impreeso na tela no segundo.
+
+
+2.  Valgrid:
+==22762== Memcheck, a memory error detector
+==22762== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==22762== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==22762== Command: ./c2.exe
+==22762== 
+==22762== Conditional jump or move depends on uninitialised value(s)
+==22762==    at 0x48D6B56: __vfprintf_internal (vfprintf-internal.c:1516)
+==22762==    by 0x48C081E: printf (printf.c:33)
+==22762==    by 0x1091F1: main (c2.c:11)
+==22762== 
+==22762== Use of uninitialised value of size 8
+==22762==    at 0x48BA33B: _itoa_word (_itoa.c:177)
+==22762==    by 0x48D5B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==22762==    by 0x48C081E: printf (printf.c:33)
+==22762==    by 0x1091F1: main (c2.c:11)
+==22762== 
+==22762== Conditional jump or move depends on uninitialised value(s)
+==22762==    at 0x48BA34C: _itoa_word (_itoa.c:177)
+==22762==    by 0x48D5B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==22762==    by 0x48C081E: printf (printf.c:33)
+==22762==    by 0x1091F1: main (c2.c:11)
+==22762== 
+==22762== Conditional jump or move depends on uninitialised value(s)
+==22762==    at 0x48D6643: __vfprintf_internal (vfprintf-internal.c:1516)
+==22762==    by 0x48C081E: printf (printf.c:33)
+==22762==    by 0x1091F1: main (c2.c:11)
+==22762== 
+==22762== Conditional jump or move depends on uninitialised value(s)
+==22762==    at 0x48D5C85: __vfprintf_internal (vfprintf-internal.c:1516)
+==22762==    by 0x48C081E: printf (printf.c:33)
+==22762==    by 0x1091F1: main (c2.c:11)
+==22762== 
+0 1 2 3 4 5 6 7 8 0 
+==22762== 
+==22762== HEAP SUMMARY:
+==22762==     in use at exit: 0 bytes in 0 blocks
+==22762==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==22762== 
+==22762== All heap blocks were freed -- no leaks are possible
+==22762== 
+==22762== Use --track-origins=yes to see where uninitialised values come from
+==22762== For lists of detected and suppressed errors, rerun with: -s
+==22762== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+
+3.  Na condição do primeiro for mudar “i < 9” para “i < 10”
+
+
+4. Valgrid:
+==23246== Memcheck, a memory error detector
+==23246== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==23246== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==23246== Command: ./c2.exe
+==23246== 
+0 1 2 3 4 5 6 7 8 9 
+==23246== 
+==23246== HEAP SUMMARY:
+==23246==     in use at exit: 0 bytes in 0 blocks
+==23246==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==23246== 
+==23246== All heap blocks were freed -- no leaks are possible
+==23246== 
+==23246== For lists of detected and suppressed errors, rerun with: -s
+==23246== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -1,0 +1,52 @@
+﻿Estruturas de Dados
+Aula Prática 3
+c12
+
+
+
+Nome: Letícia Scofield Lenzoni
+Matrícula: 2022035547
+
+
+
+1.  Possivelmente o erro está relacionado com a variável x não ter sido inicializada antes de ser usada no if.
+
+
+2. Valgrind:
+==38726== Memcheck, a memory error detector
+==38726== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==38726== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==38726== Command: ./c12.exe
+==38726== 
+==38726== Conditional jump or move depends on uninitialised value(s)
+==38726==    at 0x109159: main (c12.c:6)
+==38726== 
+X is zero==38726== 
+==38726== HEAP SUMMARY:
+==38726==     in use at exit: 0 bytes in 0 blocks
+==38726==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==38726== 
+==38726== All heap blocks were freed -- no leaks are possible
+==38726== 
+==38726== Use --track-origins=yes to see where uninitialised values come from
+==38726== For lists of detected and suppressed errors, rerun with: -s
+==38726== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+3. Inicializei o x igual a 0.
+
+
+4. Valgrind:
+==38917== Memcheck, a memory error detector
+==38917== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==38917== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==38917== Command: ./c12.exe
+==38917== 
+X is zero==38917== 
+==38917== HEAP SUMMARY:
+==38917==     in use at exit: 0 bytes in 0 blocks
+==38917==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==38917== 
+==38917== All heap blocks were freed -- no leaks are possible
+==38917== 
+==38917== For lists of detected and suppressed errors, rerun with: -s
+==38917== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
