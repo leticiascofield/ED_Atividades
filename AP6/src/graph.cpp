@@ -1,40 +1,33 @@
-#ifndef GRAFO
-#define GRAFO
+#include "graph.hpp"
 
-#include "listaAdjacencia.cpp"
+Grafo::Grafo() {}
 
+Grafo::~Grafo() {}
 
-/*  Você pode inserir os includes necessários para que sua classe funcione.
- * Nenhuma outra alteração neste arquivo é permitida
- */
+void Grafo::InsereVertice() {
+    vertices.InsereVertice();
+}
 
+void Grafo::InsereAresta(int v, int w) {
+    vertices.InsereAresta(v, w);
+}
 
-class Grafo{
-    public:
-        Grafo();
-        ~Grafo();
+int Grafo::QuantidadeVertices() {
+    return vertices.QuantidadeVertices();
+}
 
-        void InsereVertice();
-        void InsereAresta(int v, int w);
+int Grafo::QuantidadeArestas() {
+    return vertices.QuantidadeArestas();
+}
 
-        int QuantidadeVertices();
-        int QuantidadeArestas();
+int Grafo::GrauMinimo() {
+    return vertices.GrauMinimo();
+}
 
-        int GrauMinimo();
-        int GrauMaximo();
+int Grafo::GrauMaximo() {
+    return vertices.GrauMaximo();
+}
 
-        void ImprimeVizinhos(int v);
-        
-    private:
-        
-        /*  Você deve implementar ListaAdjacencia como um TAD que irá armazenar
-         * os dados do grafo. Lembrando que este TAD deve ser uma lista 
-         * encadeada
-         */
-
-
-        ListaAdjacencia vertices;
-
-};
-
-#endif
+void Grafo::ImprimeVizinhos(int v) {
+    vertices.ImprimeVizinhos(v);
+}
